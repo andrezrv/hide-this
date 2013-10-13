@@ -41,7 +41,7 @@ Hide your content to all non-logged visitors:
 `[hide for="!logged"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content to all logged in visitors:
-`[hide for="!logged"]Lorem ipsum dolor sit amet.[/hide]`
+`[hide for="logged"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content to all logged in visitors, except for a specific user:
 `[hide for="logged" exclude="username:foo"]Lorem ipsum dolor sit amet.[/hide]`
