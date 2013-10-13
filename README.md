@@ -72,10 +72,6 @@ Hide your content for everyone except for a specific user by user name:
 
 You should get the idea by now. Notice how you can use `!` to deny values such as login status, roles, capabilities and user values.
 
-#### Contribute
-
-You can make suggestions and submit your own modifications to this plugin on [Github](https://github.com/andrezrv/hide-this).
-
 ## Installation
 
 1. Unzip `hide-this.zip` and upload the `hide-this` folder to your `/wp-content/plugins/` directory.
