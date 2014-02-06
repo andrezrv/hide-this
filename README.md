@@ -72,13 +72,29 @@ Hide your content for everyone except for a specific user by user name:
 
 You should get the idea by now. Notice how you can use `!` to deny values such as login status, roles, capabilities and user values.
 
+## Extending
+
+This plugin offers hooks for filters, so you can modify its functionality or add your own.
+
+* `hide_this_attributes`: Modify the attributes that the shortcode receives. 
+* `hide_this_content`: Modify the full content that the shortcode prints.
+* `hide_this_hide_rules`: Modify rules for hiding content.
+* `hide_this_show_rules`: Modify rules for showing content.
+
 ## Installation
 
 1. Unzip `hide-this.zip` and upload the `hide-this` folder to your `/wp-content/plugins/` directory.
 2. Activate the plugin through the **"Plugins"** menu in WordPress.
 3. Start using the `[hide]` shortcode to hide the content you want.
 
+## Contributing
+If you feel like you want to help this project by adding something you think useful, you can make your pull request against the master branch :)
+
 ## Changelog
+
+#### 1.1
+* Object oriented code.
+* New filter hooks.
 
 #### 1.0
 First release!

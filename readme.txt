@@ -2,8 +2,8 @@
 Contributors: andrezrv
 Tags: hide, content, user, role, capability
 Requires at least: 3.0
-Tested up to: 3.6.1
-Stable tag: 1.0
+Tested up to: 3.8.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,15 @@ Hide your content for everyone except for a specific user by user name:
 
 You should get the idea by now. Notice how you can use `!` to deny values such as login status, roles, capabilities and user values.
 
+#### Extending
+
+This plugin offers hooks for filters, so you can modify its functionality or add your own.
+
+* `hide_this_attributes`: Modify the attributes that the shortcode receives. 
+* `hide_this_content`: Modify the full content that the shortcode prints.
+* `hide_this_hide_rules`: Modify rules for hiding content.
+* `hide_this_show_rules`: Modify rules for showing content.
+
 #### Contribute
 
 You can make suggestions and submit your own modifications to this plugin on [Github](https://github.com/andrezrv/hide-this).
@@ -94,6 +103,10 @@ You can make suggestions and submit your own modifications to this plugin on [Gi
 3. Start using the `[hide]` shortcode to hide the content you want.
 
 == Changelog ==
+
+= 1.1 =
+* Object oriented code.
+* New filter hooks.
 
 = 1.0 =
 First release!
