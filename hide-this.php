@@ -8,7 +8,7 @@
  * specific user.
  *
  * @package   Hide_This
- * @version   1.1
+ * @version   1.1.1
  * @author    Andrés Villarreal <andrezrv@gmail.com>
  * @license   GPL-2.0
  * @link      http://github.com/andrezrv/hide-this/
@@ -20,7 +20,7 @@
  * Description: This plugin provides a shortcode that lets you hide some parts of the content from your posts and pages. You can easily manage inclusions and exclusions for hidden content in three levels: absolute, groups and capabilities, and specific user.
  * Author: Andr&eacute;s Villarreal
  * Author URI: http://about.me/andrezrv/
- * Version: 1.1
+ * Version: 1.1.1
  */
 // Load Hide This class
 require( dirname( __FILE__ ) . '/hide-this.class.php' );

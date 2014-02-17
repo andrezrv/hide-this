@@ -3,7 +3,7 @@ Contributors: andrezrv
 Tags: hide, content, user, role, capability
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,6 +103,9 @@ You can make suggestions and submit your own modifications to this plugin on [Gi
 3. Start using the `[hide]` shortcode to hide the content you want.
 
 == Changelog ==
+
+= 1.1.1 =
+* Improvement: Parsing shortcodes into `[hide]` and  `[hidethis]`.
 
 = 1.1 =
 * Object oriented code.

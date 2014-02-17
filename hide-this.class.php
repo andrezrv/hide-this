@@ -66,6 +66,9 @@ class Hide_This {
 			$content
 		);
 
+		// Processing other shortcodes.
+		$content = do_shortcode( $content );
+
 		// Apply filters.
 		$content = apply_filters( 'hide_this_content', $content );
 

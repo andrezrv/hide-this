@@ -6,6 +6,8 @@ Maybe some part of your post should not be published yet? Or maybe you want to s
 
 It's **very important** to note that the content wrapped within the shortcode won't even be printed as HTML. It will be really, really hidden. There are a lot of great plugins that hide the content via CSS and Javascript, but this is not the case. If you want your content to not be visible, but still printed as HTML, you should try one of those.
 
+**Current stable version:** [1.1.1](http://github.com/andrezrv/hide-this/tree/1.1.1)
+
 **Basic usage:**
 
 `[hide]Lorem ipsum dolor sit amet.[/hide]`
@@ -91,6 +93,9 @@ This plugin offers hooks for filters, so you can modify its functionality or add
 If you feel like you want to help this project by adding something you think useful, you can make your pull request against the master branch :)
 
 ## Changelog
+
+#### 1.1.1
+* Improvement: Parsing shortcodes into `[hide]` and  `[hidethis]`.
 
 #### 1.1
 * Object oriented code.
