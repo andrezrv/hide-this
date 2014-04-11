@@ -3,7 +3,7 @@ Contributors: andrezrv
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7XQG5ZA36UZ4
 Tags: hide, content, user, role, capability
 Requires at least: 3.0
-Tested up to: 3.8.1
+Tested up to: 3.8.2
 Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -88,7 +88,7 @@ You should get the idea by now. Notice how you can use `!` to deny values such a
 
 This plugin offers hooks for filters, so you can modify its functionality or add your own.
 
-* `hide_this_attributes`: Modify the attributes that the shortcode receives. 
+* `hide_this_attributes`: Modify the attributes that the shortcode receives.
 * `hide_this_content`: Modify the full content that the shortcode prints.
 * `hide_this_hide_rules`: Modify rules for hiding content.
 * `hide_this_show_rules`: Modify rules for showing content.
