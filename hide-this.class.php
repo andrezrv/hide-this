@@ -23,7 +23,6 @@ class Hide_This {
 		$this->content    = $this->get_content( $original_content );
 	}
 
-
 	public function __get( $property ) {
 		if ( property_exists( $this, $property ) ) {
 			return $this->$property;
@@ -216,13 +215,18 @@ class Hide_This {
 	 * @param  string $altered_content Content to show if some rule is evaluated as true.
 	 * 
 	 * @return string
-	 * 
+	 *
 	 */
 	function process_array( $rules, $content, $altered_content ) {
+        $new_content = $content;
 
 		if ( is_array( $rules ) && !empty( $rules ) ) {
+            $user = wp_get_current_user();
 		
 			foreach ( $rules as $rule ) {
+                if ( empty( $new_content ) ) {
+                    $new_content = $content;
+                }
 
 				// Get nicer variable names.
 				$role = $rule['role'];
@@ -236,49 +240,49 @@ class Hide_This {
 					&& $this->evaluate_user( $role, $capability )
 				) {
 
-					$content = $altered_content;
+					$new_content = $altered_content;
 					break;
 
 				} else { // Evaluate for roles and capabilities.
 
 					if ( $role && $capability ) {  // Both role and capability are specified in the rule.
-						if (   $this->evaluate_role( $role )
+						if (   $this->evaluate_role( $role, $user )
 							&& $this->evaluate_capability( $capability ) 
 						) {
-							$content = $altered_content;
+                            $new_content = $altered_content;
 							break;
 						}
 					} elseif ( $capability ) { // Only capability is specified in the rule.
 						if ( $this->evaluate_capability( $capability ) ) {
-							$content = $altered_content;
-							break;					
-						}
-					} elseif ( $role ) { // Only role is specified in the rule.
-						if ( $this->evaluate_role( $role ) ) {
-							$content = $altered_content;
+                            $new_content = $altered_content;
 							break;
 						}
+					} elseif ( $role ) { // Only role is specified in the rule.
+						if ( $this->evaluate_role( $role, $user ) ) {
+                            $new_content = $altered_content;
+                            break;
+						}
 					}
-					
 				}
-
 			}
-
 		}
-		return $content;
 
+		return $new_content;
 	}
 
 	/**
 	 * Check if the user has the given role, and if that role is not negative.
 	 * 
-	 * @param  string  $role A role to be evaluated.
-	 * @return boolean       Wether the role was validated or not.
+	 * @param  string   $role A role to be evaluated.
+	 * @param  WP_User  $user Current user object.
+	 * @return boolean        Whether the role was validated or not.
 	 */
-	function evaluate_role( $role ) {
-		if (   $this->check_user_role( $this->real_name( $role ) ) 
-			== $this->expected_value( $role ) 
-		) {
+	function evaluate_role( $role, $user ) {
+        $role_name = $this->real_name( $role );
+        $checked = $this->check_user_role( $role_name );
+        $expected = $this->expected_value( $role );
+
+		if ( ( $checked == $expected ) && in_array( $role_name, $user->roles ) ) {
 			return true;
 		}
 		return false;
@@ -307,13 +311,17 @@ class Hide_This {
 	 * @return array          An array of attributes.
 	 */
 	function make_attr_array( $string ) {
-		$array = explode( ',', $string );
-		$new_array = array();
-		// Remove white spaces.
-		foreach ( $array as $element ) {
-			$new_array[] = trim( $element );
-		}
-		return $new_array;
+        if ( $string ) {
+            $array = explode( ',', $string );
+            $new_array = array();
+            // Remove white spaces.
+            foreach ( $array as $element ) {
+                $new_array[] = trim( $element );
+            }
+            return $new_array;
+        }
+
+        return null;
 	}
 
 	/**
@@ -324,17 +332,21 @@ class Hide_This {
 	 * @return array        An array containing lists of rules as arrays.
 	 */
 	function make_rules_array( $array ) {
-		$new_array = array();
-		if ( is_array( $array ) && !empty( $array ) ) {
-			$i = 0;
+        if ( is_array( $array ) && !empty( $array ) ) {
+            $new_array = array();
+            $i = 0;
+
 			foreach ( $array as $key => $value ) {
 				$single_rule_array = explode( ':', $value );
 				$new_array[$i]['role'] = isset( $single_rule_array[0] ) ? $single_rule_array[0] : '';
 				$new_array[$i]['capability'] = isset( $single_rule_array[1] ) ? $single_rule_array[1] : '';
 				$i++;
 			}
-		}
-		return $new_array;
+
+            return $new_array;
+        }
+
+        return null;
 	}
 
 	/**

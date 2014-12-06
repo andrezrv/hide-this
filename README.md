@@ -6,7 +6,7 @@ Maybe some part of your post should not be published yet? Or maybe you want to s
 
 It's **very important** to note that the content wrapped within the shortcode won't even be printed as HTML. It will be really, really hidden. There are a lot of great plugins that hide the content via CSS and Javascript, but this is not the case. If you want your content to not be visible, but still printed as HTML, you should try one of those.
 
-**Current stable version:** [1.1.1](http://github.com/andrezrv/hide-this/tree/1.1.1)
+**Current stable version:** [1.1.2](http://github.com/andrezrv/hide-this/tree/1.1.2)
 
 **Basic usage:**
 
@@ -97,6 +97,9 @@ If you feel like you want to help this project by adding something you think use
 This plugin took a lot of work. If it is helpful to you on a regular basis, you may want to consider [making a donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7XQG5ZA36UZ4). I'll be really thankful with that, and try my best to provide a great support for all the people who use it :). Donations are processed securely via [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7XQG5ZA36UZ4).
 
 ## Changelog
+
+#### 1.1.2
+* Fix: Multiple role assignation wasn't working in some scenarios.
 
 #### 1.1.1
 * Improvement: Parsing shortcodes into `[hide]` and  `[hidethis]`.
