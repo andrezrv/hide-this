@@ -3,8 +3,8 @@ Contributors: andrezrv
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7XQG5ZA36UZ4
 Tags: hide, content, user, role, capability
 Requires at least: 3.0
-Tested up to: 4.0.1
-Stable tag: 1.1.2
+Tested up to: 4.3.1
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,9 @@ You can make suggestions and submit your own modifications to this plugin on [Gi
 3. Start using the `[hide]` shortcode to hide the content you want.
 
 == Changelog ==
+
+= 1.1.3 =
+* Fix: A bug was causing contents always showing for all users when applying negations to roles.
 
 = 1.1.2 =
 * Fix: Multiple role assignation wasn't working in some scenarios.

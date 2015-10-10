@@ -27,6 +27,8 @@ class Hide_This {
 		if ( property_exists( $this, $property ) ) {
 			return $this->$property;
 		}
+
+		return null;
 	}
 
 	public function __set( $property, $value ) {
@@ -39,7 +41,7 @@ class Hide_This {
 	/**
 	 * Process and hide or show content by $this->attributes.
 	 * 
-	 * @param  string $original Original HTML content, normally the one inside the [hide] shortcode.
+	 * @param  string $original_content Original HTML content, normally the one inside the [hide] shortcode.
 	 * @return string           HTML result.
 	 */
 	function get_content( $original_content ) {
@@ -127,7 +129,7 @@ class Hide_This {
 	 * 
 	 * @param  string $test_criteria    Testing criteria.
 	 * @param  string $original_content Original content.
-	 * @param  string $content          Modified content.
+	 * @param  string $new_content      Modified content.
 	 * @return string                   Test result.
 	 */
 	function test( $test_criteria, $original_content, $new_content ) {
@@ -221,8 +223,6 @@ class Hide_This {
         $new_content = $content;
 
 		if ( is_array( $rules ) && !empty( $rules ) ) {
-            $user = wp_get_current_user();
-		
 			foreach ( $rules as $rule ) {
                 if ( empty( $new_content ) ) {
                     $new_content = $content;
@@ -246,7 +246,7 @@ class Hide_This {
 				} else { // Evaluate for roles and capabilities.
 
 					if ( $role && $capability ) {  // Both role and capability are specified in the rule.
-						if (   $this->evaluate_role( $role, $user )
+						if (   $this->evaluate_role( $role )
 							&& $this->evaluate_capability( $capability ) 
 						) {
                             $new_content = $altered_content;
@@ -258,7 +258,7 @@ class Hide_This {
 							break;
 						}
 					} elseif ( $role ) { // Only role is specified in the rule.
-						if ( $this->evaluate_role( $role, $user ) ) {
+						if ( $this->evaluate_role( $role ) ) {
                             $new_content = $altered_content;
                             break;
 						}
@@ -274,15 +274,14 @@ class Hide_This {
 	 * Check if the user has the given role, and if that role is not negative.
 	 * 
 	 * @param  string   $role A role to be evaluated.
-	 * @param  WP_User  $user Current user object.
 	 * @return boolean        Whether the role was validated or not.
 	 */
-	function evaluate_role( $role, $user ) {
+	function evaluate_role( $role ) {
         $role_name = $this->real_name( $role );
         $checked = $this->check_user_role( $role_name );
         $expected = $this->expected_value( $role );
 
-		if ( ( $checked == $expected ) && in_array( $role_name, $user->roles ) ) {
+		if ( $checked == $expected ) {
 			return true;
 		}
 		return false;
@@ -424,6 +423,8 @@ class Hide_This {
 				return false;
 				break;
 		}
+
+		return false;
 	}
 
 	/**
