@@ -8,7 +8,7 @@
  * specific user.
  *
  * @package   Hide_This
- * @version   1.1.2
+ * @version   1.1.3
  * @author    Andrés Villarreal <andrezrv@gmail.com>
  * @license   GPL-2.0
  * @link      http://github.com/andrezrv/hide-this/
