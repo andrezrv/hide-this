@@ -20,7 +20,7 @@
  * Description: This plugin provides a shortcode that lets you hide some parts of the content from your posts and pages. You can easily manage inclusions and exclusions for hidden content in three levels: absolute, groups and capabilities, and specific user.
  * Author: Andr&eacute;s Villarreal
  * Author URI: http://andrezrv.com
- * Version: 1.1.2
+ * Version: 1.1.3
  */
 // Load Hide This class
 require( dirname( __FILE__ ) . '/hide-this.class.php' );
