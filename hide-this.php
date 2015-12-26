@@ -12,7 +12,7 @@
  * @author    Andrés Villarreal <andrezrv@gmail.com>
  * @license   GPL-2.0
  * @link      http://github.com/andrezrv/hide-this/
- * @copyright 2013-2014 Andrés Villarreal
+ * @copyright 2013-2016 Andrés Villarreal
  *
  * @wordpress-plugin
  * Plugin Name: Hide This
