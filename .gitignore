@@ -1,0 +1,48 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+_notes
+dwsync.xml
+*.komodoproject
+.komodotools
+
+# Shell files
+*.sh
+
+# Composer files
+composer*
+vendor
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+.idea
+cache
+
+# SVN assets
+/assets
+
+# Development files
+develop.php
