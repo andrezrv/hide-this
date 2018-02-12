@@ -3,7 +3,7 @@ Contributors: andrezrv
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B7XQG5ZA36UZ4
 Tags: hide, content, user, role, capability
 Requires at least: 3.0
-Tested up to: 4.7
+Tested up to: 4.9
 Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,53 +33,73 @@ This example will hide that content for all the site visitors. But you can be mo
 **Some useful examples:**
 
 Hide your content to all visitors:
+
 `[hide]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content to all visitors, except for a specific user:
+
 `[hide for="all" exclude="username:foo"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content to all non-logged visitors:
+
 `[hide for="!logged"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content to all logged in visitors:
+
 `[hide for="logged"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content to all logged in visitors, except for a specific user:
+
 `[hide for="logged" exclude="username:foo"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content for some specific role:
+
 `[hide for="contributor"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content for two specific roles:
+
 `[hide for="editor, contributor"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content for all visitors except for a specific role:
-`[hide for="!administrator"]Lorem ipsum dolor sit amet.[/hide]`
-`[hide for="all" exclude="administrator"]Lorem ipsum dolor sit amet.[/hide]`
+
+`
+[hide for="!administrator"]Lorem ipsum dolor sit amet.[/hide]
+[hide for="all" exclude="administrator"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for all visitors except for two specific roles:
-`[hide for="!administrator, !editor"]Lorem ipsum dolor sit amet.[/hide]`
-`[hide for="all" exclude="administrator, editor"]Lorem ipsum dolor sit amet.[/hide]`
+
+`
+[hide for="!administrator, !editor"]Lorem ipsum dolor sit amet.[/hide]
+[hide for="all" exclude="administrator, editor"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for users with a specific role and a specific capability:
+
 `[hide for="some_role:do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content for users with a specific role, not having a specific capability:
+
 `[hide for="some_role:!do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content for users with a specific capability:
+
 `[hide for=":do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]`
 
 Hide your content for a specific user by user name:
+
 `[hide for="username:foo"]`
 
 Hide your content for a specific user by user ID:
+
 `[hide for="userid:42"]`
 
 Hide your content for a specific user by user email:
+
 `[hide for="useremail:foo@mail.com"]`
 
 Hide your content for everyone except for a specific user by user name:
+
 `[hide for="username:!foo"]`
 
 You should get the idea by now. Notice how you can use `!` to deny values such as login status, roles, capabilities and user values.
