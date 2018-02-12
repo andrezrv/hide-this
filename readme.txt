@@ -34,31 +34,45 @@ This example will hide that content for all the site visitors. But you can be mo
 
 Hide your content to all visitors:
 
-`[hide]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content to all visitors, except for a specific user:
 
-`[hide for="all" exclude="username:foo"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="all" exclude="username:foo"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content to all non-logged visitors:
 
-`[hide for="!logged"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="!logged"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content to all logged in visitors:
 
-`[hide for="logged"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="logged"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content to all logged in visitors, except for a specific user:
 
-`[hide for="logged" exclude="username:foo"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="logged" exclude="username:foo"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for some specific role:
 
-`[hide for="contributor"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="contributor"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for two specific roles:
 
-`[hide for="editor, contributor"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="editor, contributor"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for all visitors except for a specific role:
 
@@ -76,31 +90,45 @@ Hide your content for all visitors except for two specific roles:
 
 Hide your content for users with a specific role and a specific capability:
 
-`[hide for="some_role:do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="some_role:do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for users with a specific role, not having a specific capability:
 
-`[hide for="some_role:!do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for="some_role:!do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for users with a specific capability:
 
-`[hide for=":do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]`
+`
+[hide for=":do_a_barrel_roll"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for a specific user by user name:
 
-`[hide for="username:foo"]`
+`
+[hide for="username:foo"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for a specific user by user ID:
 
-`[hide for="userid:42"]`
+`
+[hide for="userid:42"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for a specific user by user email:
 
-`[hide for="useremail:foo@mail.com"]`
+`
+[hide for="useremail:foo@mail.com"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 Hide your content for everyone except for a specific user by user name:
 
-`[hide for="username:!foo"]`
+`
+[hide for="username:!foo"]Lorem ipsum dolor sit amet.[/hide]
+`
 
 You should get the idea by now. Notice how you can use `!` to deny values such as login status, roles, capabilities and user values.
 
